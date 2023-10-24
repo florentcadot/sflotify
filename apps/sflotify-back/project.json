@@ -1,7 +1,7 @@
 {
-  "name": "sflotify",
+  "name": "sflotify-back",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/sflotify/src",
+  "sourceRoot": "apps/sflotify-back/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -11,12 +11,12 @@
       "options": {
         "target": "node",
         "compiler": "tsc",
-        "outputPath": "dist/apps/sflotify",
-        "main": "apps/sflotify/src/main.ts",
-        "tsConfig": "apps/sflotify/tsconfig.app.json",
-        "assets": ["apps/sflotify/src/assets"],
+        "outputPath": "dist/apps/sflotify-back",
+        "main": "apps/sflotify-back/src/main.ts",
+        "tsConfig": "apps/sflotify-back/tsconfig.app.json",
+        "assets": ["apps/sflotify-back/src/assets"],
         "isolatedConfig": true,
-        "webpackConfig": "apps/sflotify/webpack.config.js"
+        "webpackConfig": "apps/sflotify-back/webpack.config.js"
       },
       "configurations": {
         "development": {},
@@ -27,14 +27,14 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "sflotify:build"
+        "buildTarget": "sflotify-back:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "sflotify:build:development"
+          "buildTarget": "sflotify-back:build:development"
         },
         "production": {
-          "buildTarget": "sflotify:build:production"
+          "buildTarget": "sflotify-back:build:production"
         }
       }
     },
@@ -42,14 +42,14 @@
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/sflotify/**/*.ts"]
+        "lintFilePatterns": ["apps/sflotify-back/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/sflotify/jest.config.ts",
+        "jestConfig": "apps/sflotify-back/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
